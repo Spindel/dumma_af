@@ -1,0 +1,78 @@
+create_profile( email, Name, CV, free_will ):
+	if not found:  
+		create a new profile
+		return User ID
+	If email found: 
+		exception? 
+		return old ID?
+		return false? 
+
+
+	
+
+delete_profile( userid ) 
+   if found:  
+   	remove profile
+		(Cascade deletes)
+		needs to delete all appplications
+		But not logs
+ 	 return true
+   else 
+	return false
+
+
+
+get_profile (userid):
+   if not exist: 
+     return false
+    else: 
+       return email, name, CV, Free_will
+
+--
+
+get_userid(email):
+   if not found: 
+      return false
+    else: 
+      return  userid
+--
+
+update_profile( userid, name, email, CV, free_will ):
+   if not found:
+	return false
+   else: 
+	overwrite profile
+
+
+--
+ 
+create_subscription(userid, corporation_id)
+	adds a post that this user wants a job
+
+delete_subscription(userid, corporation_id )
+   removes a post.
+
+get_subscription(userid) 
+   returns all subscriptions
+
+--
+
+
+get_history(email) :
+   returns logs of that email address
+
+
+
+
+send_subscriptions()
+	iterate all subscriptions, send emails.
+	returns status of all messages.
+
+send_email(Corporation, Name, Email)
+	get form from formMails,
+		prepare and send
+	add log entry
+	returns true if sent, false if not.
+
+
+
