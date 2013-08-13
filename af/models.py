@@ -14,10 +14,11 @@ class User(models.Model):
 
 class Corporation(models.Model):
     name = models.CharField(max_length=50, unique=True)
-    description = models.TextField()
+#    description = models.TextField()
 
     def __unicode__(self):
-        return self.name + ' ' + self.description
+        return self.name
+    # + ' ' + self.description
 
 class Subscriber(models.Model):
     user = models.ForeignKey(User, unique=True)
