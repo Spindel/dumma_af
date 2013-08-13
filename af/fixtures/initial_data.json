@@ -3,14 +3,14 @@
     "model": "af.Corporation",
     "pk": 1,
     "fields": {
-      "name": "De Klomp AB",
+      "name": "De Klomp AB"
     }
   },
   {
     "model": "af.Corporation",
     "pk": 2,
     "fields": {
-      "name": "Take IT enskild firma",
+      "name": "Take IT enskild firma"
     }
   },
 
@@ -18,7 +18,7 @@
     "model": "af.Corporation",
     "pk": 3,
     "fields": {
-      "name": "Laboloola",
+      "name": "Laboloola"
     }
   },
 
@@ -27,7 +27,7 @@
     "model": "af.Corporation",
     "pk": 4,
     "fields": {
-      "name": "Aanstoot AB",
+      "name": "Aanstoot AB"
     }
   },
 
@@ -35,9 +35,7 @@
     "model": "af.Corporation",
     "pk": 5,
     "fields": {
-      "name": "MyModio AB",
+      "name": "MyModio AB"
     }
-  },
-
-
+  }
 ]
