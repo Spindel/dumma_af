@@ -39,12 +39,12 @@ class FormMail(models.Model):
         return self.text
 
 class Log(models.Model):
-    date =  models.DateField(auto_now_add=True)
+    date =  models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=250)
     email = models.EmailField(max_length=254)
     status = models.CharField(max_length=50)
     form = models.ForeignKey(FormMail)
 
     def __unicode__(self):
-        return self.date + ' <' + self.name + '> ' + self.email + ' ' + self.status
+        return self.date.strftime("%Y-%m-%d %H:%M:%S") + ' ' + self.name + ' <' + self.email + '> ' + self.status
 # Create your models here.
