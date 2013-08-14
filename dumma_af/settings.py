@@ -108,6 +108,7 @@ ROOT_URLCONF = 'dumma_af.urls'
 WSGI_APPLICATION = 'dumma_af.wsgi.application'
 
 TEMPLATE_DIRS = (
+    '/home/spider/Projects/dumma_af/django_templates'
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -122,9 +123,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'af',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    'django.contrib.admindocs',
 )
 
 # A sample logging configuration. The only tangible logging
