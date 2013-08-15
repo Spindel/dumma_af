@@ -2,11 +2,15 @@
 
 from django.http import HttpResponse
 
+from af.models import Log
+
 def index(request):
-        return HttpResponse("Hello, world.  This is the index")
+        return HttpResponse("This is the index function")
 
 def log(request):
-        return HttpResponse("This is the logs section")
+    last_log = Log.objects.order_by('-date')[:5]
+    output = ', '.join([p.name for p in last_log])
+    return HttpResponse(output)
 
 def userLog(request, userid):
     return HttpResponse("This should return the log for user %s" % userid)

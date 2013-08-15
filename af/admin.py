@@ -6,12 +6,13 @@ admin.site.register(FormMail)
 admin.site.register(Subscriber)
 
 class LogAdmin(admin.ModelAdmin):
-#    fields = ['email', 'name', 'status', 'form']
-    fieldsets = [
-        (None ,     {'fields': ['email', 'name', 'status']}),
-        ('Message', {'fields': ['form'],
-                     'classes': ['collapse'] }),
-    ]
+    fields = ['email', 'name', 'status', 'form']
+# don't hide required fields ;)
+#    fieldsets = [
+#        (None ,     {'fields': ['email', 'name', 'status']}),
+#        ('Message', {'fields': ['form'],
+#                     'classes': ['collapse'] }),
+#    ]
 
 admin.site.register(Log, LogAdmin)
 
