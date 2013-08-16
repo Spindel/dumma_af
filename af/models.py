@@ -4,10 +4,10 @@ class User(models.Model):
     VOLONTEER= ( ('J', 'Söker Frivilligt'),
                  ('N', 'Tvingad av nya regler'),
                )
-    name = models.CharField(max_length=250)
-    email = models.EmailField(max_length=254, unique=True)
-    volonteer = models.CharField(max_length=1, choices=VOLONTEER)
-    cv = models.TextField(max_length=10000)
+    name = models.CharField(max_length=250, null=False)
+    email = models.EmailField(max_length=254, unique=True, null=False)
+    volonteer = models.CharField(max_length=1, choices=VOLONTEER, null=False)
+    cv = models.TextField(max_length=10000, null=False)
 
     def __unicode__(self):
         return '<' + self.name + '> ' + self.email
