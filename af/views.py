@@ -1,6 +1,8 @@
 ﻿# Create your views here.
 
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse
+from django.core.urlresolvers import reverse
 
 from af.models import Corporation, Log
 
@@ -34,3 +36,9 @@ def detail(request, logId):
     except Log.DoesNotExist:
         raise Http404
     return render(request, 'af/detail.html', {'log':log})
+
+def vote(request, corporation):
+    return False
+
+#     p = get_object_or_404(Corporation, pg=corporation)
+#     try:

@@ -1,6 +1,6 @@
 <h1>Söker du jobb?</h1>
 
-<form action="{% url 'af:apply' corporation.id  }" method="post">
+<form action="{% url 'af:apply' corporation.id  %}" method="post">
 	{% csrf_token %}
 	{% for corp in corporation_list %}
 		<input type="checkbox" id="corp{{forloop.counter }}" value="{{ corp.id }}" />
