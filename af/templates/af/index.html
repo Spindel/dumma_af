@@ -1,10 +1,37 @@
-<h1>Söker du jobb?</h1>
 
-<form action="{% url 'af:apply' corporation.id  %}" method="post">
-	{% csrf_token %}
-	{% for corp in corporation_list %}
-		<input type="checkbox" id="corp{{forloop.counter }}" value="{{ corp.id }}" />
-		<label for="corp{{ forloop.counter }}">{{ corp.name }}</label><br />
-	{% endfor %}
-	<input type="submit" value="apply" />
-</form>
+{% load browserid %}
+
+<html>
+<head>
+	{% browserid_css %}
+</head>
+	<body>
+	{% browserid_info %}
+	<header>
+		<h1>Söker du jobb?</h1>
+		<div class="authentication">
+			{% if not user.is_authenticated %}
+				{% browserid_login text='Logga in eller skapa användare' color='dark' %}
+			{% endif %}
+		</div>
+	</header>
+	<article>
+			<p>Måste du söka ett visst antal jobb per vecka?<br />
+			Vi gör det enkelt att söka flera jobb i taget, och snabbt få besked.
+			<br />
+			Sök idag!
+			</p>
+			<form action="{% url 'af:candidate' %}" method="post">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<input type="submit" value="Sök Jobb" />
+			</form>
+
+		{% if user.is_authenticated %}
+			{% browserid_logout text='Logga Ut' %}
+		{% endif %}
+	</article>
+	<script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+	{% browserid_js %}
+	</body>
+</html>

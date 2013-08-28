@@ -9,6 +9,10 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+
+SITE_URL='http://127.0.0.1:8000'
+SITE_NAME='Dumma AF'
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
@@ -116,6 +120,7 @@ TEMPLATE_DIRS = (
 
 INSTALLED_APPS = (
     'django.contrib.auth',
+    'django_browserid',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
 #     'django.contrib.sites',
@@ -127,6 +132,43 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
 )
+
+# Add the django_browserid authentication backend.
+AUTHENTICATION_BACKENDS = (
+   # ...
+   'django.contrib.auth.backends.ModelBackend',
+   'django_browserid.auth.BrowserIDBackend',
+   # ...
+)
+
+
+# Add the django_browserid context processor.
+TEMPLATE_CONTEXT_PROCESSORS = (
+   'django.contrib.auth.context_processors.auth',
+   # ...
+   'django_browserid.context_processors.browserid',
+   # ...
+
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+    'django.contrib.messages.context_processors.messages',
+)
+
+
+
+# Path to redirect to on successful login.
+LOGIN_REDIRECT_URL = '/'
+
+# Path to redirect to on unsuccessful login attempt.
+LOGIN_REDIRECT_URL_FAILURE = '/'
+
+# Path to redirect to on logout.
+LOGOUT_REDIRECT_URL = '/'
+
+BROWSERID_CREATE_USER = True
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
