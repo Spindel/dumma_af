@@ -1,6 +1,7 @@
 ﻿from django.contrib import admin
-from af.models import Corporation, Log, Subscriber, FormMail
+from af.models import Corporation, Log, Subscriber, FormMail,User
 
+admin.site.register(User)
 admin.site.register(Corporation)
 admin.site.register(FormMail)
 admin.site.register(Subscriber)
