@@ -6,6 +6,7 @@ class User(models.Model):
     VOLONTEER= ( ('J', 'Söker Frivilligt'),
                  ('N', 'Tvingad av nya regler'),
                )
+    auth_user = models.ForeignKey(auth.models.User)
     name = models.CharField(max_length=250, null=False)
     volonteer = models.CharField(max_length=1, choices=VOLONTEER, blank=False,
                                  default='N', null=False)
