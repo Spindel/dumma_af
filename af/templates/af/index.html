@@ -23,8 +23,11 @@
 			</p>
 			<form action="{% url 'af:candidate' %}" method="post">
 				{% csrf_token %}
-				{{ form.as_p }}
-				<input type="submit" value="Sök Jobb" />
+				{{ user_form.as_p }}
+				{{ job_form.as_p }}
+				{% if user.is_authenticated %}
+					<input type="submit" value="Sök Jobb" />
+				{% endif %}
 			</form>
 
 		{% if user.is_authenticated %}
