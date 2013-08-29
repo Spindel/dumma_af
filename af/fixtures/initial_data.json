@@ -1,41 +1,128 @@
 [
-  {
-    "model": "af.Corporation",
-    "pk": 1,
-    "fields": {
-      "name": "De Klomp AB"
-    }
-  },
-  {
-    "model": "af.Corporation",
-    "pk": 2,
-    "fields": {
-      "name": "Take IT enskild firma"
-    }
-  },
+	{
+	"model": "af.Corporation",
+	"pk": 1,
+	"fields": {
+		"name": "De Klomp AB"
+	}
+	},
+	{
+	"model": "af.Corporation",
+	"pk": 2,
+	"fields": {
+		"name": "Take IT enskild firma"
+	}
+	},
 
-  {
-    "model": "af.Corporation",
-    "pk": 3,
-    "fields": {
-      "name": "Laboloola"
-    }
-  },
+	{
+	"model": "af.Corporation",
+	"pk": 3,
+	"fields": {
+		"name": "Laboloola"
+	}
+	},
 
 
-  {
-    "model": "af.Corporation",
-    "pk": 4,
-    "fields": {
-      "name": "Aanstoot AB"
-    }
-  },
+	{
+	"model": "af.Corporation",
+	"pk": 4,
+	"fields": {
+		"name": "Aanstoot AB"
+	}
+	},
 
-  {
-    "model": "af.Corporation",
-    "pk": 5,
-    "fields": {
-      "name": "MyModio AB"
-    }
-  }
+	{
+	"model": "af.Corporation",
+	"pk": 5,
+	"fields": {
+		"name": "MyModio AB"
+	}
+	},
+	{
+		"model": "af.Job",
+	"pk" : 1,
+	"fields": {
+		"name": "Servispersonal"
+		}
+	},
+
+	{
+		"model": "af.Job",
+	"pk" : 2,
+	"fields": {
+		"name": "IT Tekniker"
+		}
+	},
+	{
+		"model": "af.Job",
+	"pk" : 3,
+	"fields": {
+		"name": "Teknisk Säljare"
+		}
+	},
+	{
+		"model": "af.Job",
+	"pk" : 4,
+	"fields": {
+		"name": "Grafisk designer"
+		}
+	},
+	{
+		"model": "af.Job",
+	"pk" : 5,
+	"fields": {
+		"name": "Vaktmästare"
+		}
+	},
+	{
+		"model": "af.Job",
+	"pk" : 6,
+	"fields": {
+		"name": "Sommelier"
+		}
+	},
+	{
+		"model": "af.Job",
+	"pk" : 7,
+	"fields": {
+		"name": "Diversearbetare"
+		}
+	},
+	{
+		"model": "af.Job",
+	"pk" : 8,
+	"fields": {
+		"name": "Fotograf"
+		}
+	},
+	{
+		"model": "af.Job",
+	"pk" : 9,
+	"fields": {
+		"name": "Barnunderhållare"
+		}
+	},
+
+	{
+		"model": "af.Job",
+	"pk" : 10,
+	"fields": {
+		"name": "Webdesigner"
+		}
+	},
+	{
+		"model": "af.Job",
+	"pk" : 11,
+	"fields": {
+		"name": "Programmerare"
+		}
+	},
+
+	{
+		"model": "af.Job",
+	"pk" : 12,
+	"fields": {
+		"name": "Systemutvecklare"
+		}
+	}
 ]
