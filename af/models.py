@@ -8,12 +8,12 @@ class User(models.Model):
                )
     auth_user = models.ForeignKey(auth.models.User)
     name = models.CharField(max_length=250, null=False)
-#   email = models.EmailField(max_length=254, unique=True, null=False)
-    volonteer = models.CharField(max_length=1, choices=VOLONTEER, null=False)
+    volonteer = models.CharField(max_length=1, choices=VOLONTEER, blank=False,
+                                 default='N', null=False)
     cv = models.TextField(max_length=10000, null=False)
 
     def __unicode__(self):
-        return '<' + self.name + '> ' + auth_user.email
+        return '<' + self.name + '>'
 
 class Corporation(models.Model):
     name = models.CharField(max_length=50, unique=True)
