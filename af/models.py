@@ -4,8 +4,8 @@ class User(models.Model):
     VOLONTEER= ( ('J', 'Söker Frivilligt'),
                  ('N', 'Tvingad av nya regler'),
                )
-    name = models.CharField(max_length=250, null=False)
     email = models.EmailField(max_length=254, unique=True, null=False)
+    name = models.CharField(max_length=250, null=False)
     volonteer = models.CharField(max_length=1, choices=VOLONTEER, null=False)
     cv = models.TextField(max_length=10000, null=False)
 
@@ -20,9 +20,19 @@ class Corporation(models.Model):
         return self.name
     # + ' ' + self.description
 
+
+class Job(models.Model):
+	name = models.CharField(max_length=200, unique=True)
+	def  __unicode__(self):
+		return self.name
+
+class JobOpportunity(models.Model):
+	corporation = models.ForeignKey(Corporation, unique=True)
+	job = models.ManyToManyField(Job)
+
 class Subscriber(models.Model):
-    user = models.ForeignKey(User, unique=True)
-    subscriptions = models.ManyToManyField(Corporation)
+	user = models.ForeignKey(User, unique=True)
+	subscriptions = models.ManyToManyField(JobOpportunity)
 
 
 
@@ -33,6 +43,7 @@ class Subscriber(models.Model):
 
 class FormMail(models.Model):
     corporation = models.ForeignKey(Corporation)
+    job = models.ForeignKey(JobOpportunity)
     text = models.TextField()
 
     def __unicode__(self):
