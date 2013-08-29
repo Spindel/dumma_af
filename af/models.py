@@ -30,8 +30,14 @@ class Job(models.Model):
 		return self.name
 
 class JobOpportunity(models.Model):
-	corporation = models.ForeignKey(Corporation, unique=True)
-	job = models.ManyToManyField(Job)
+	corporation = models.ForeignKey(Corporation, null=False)
+	job = models.ForeignKey(Job, null=False)
+        description = models.CharField(max_length=200, null=True)
+        class Meta:
+            unique_together = ("corporation", "job")
+
+        def __unicode__(self):
+            return unicode(self.corporation) +" | " + unicode(self.job) + " | " +  self.description
 
 class Subscriber(models.Model):
 	user = models.ForeignKey(User, unique=True)
@@ -45,7 +51,6 @@ class Subscriber(models.Model):
 #        unique_together = (("user", "corporation"))
 
 class FormMail(models.Model):
-    corporation = models.ForeignKey(Corporation)
     job = models.ForeignKey(JobOpportunity)
     text = models.TextField()
 
